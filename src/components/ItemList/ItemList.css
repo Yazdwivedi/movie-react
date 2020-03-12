@@ -1,0 +1,4 @@
+.item :hover {
+    background-color: ghostwhite;
+    cursor: pointer;
+}
