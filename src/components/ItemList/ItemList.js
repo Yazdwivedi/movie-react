@@ -6,7 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const getJsx = ( props, type ) => {
-    console.log(props);
     return props.items
             .filter( item => item.type === type )
             .map( (item) => {

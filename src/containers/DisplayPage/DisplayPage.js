@@ -15,10 +15,7 @@ class DisplayPage extends React.Component {
                 { label : "Number of Tickets" , type : "number" , value : null},
                 { label : "Date" , type : "date" , value : null},  
                 { label : "Book" , type : "submit" }  
-            ],
-
-            bookingForm : null
-    
+            ]
         } 
     }
 
@@ -37,11 +34,7 @@ class DisplayPage extends React.Component {
     }
 
     onSubmit = () => {
-        this.setState ( (state, props) => {
-            return {
-                bookingForm : this.state.controls
-            }
-        } )
+        console.log(this.state.controls);
     }
 
     render () {    
