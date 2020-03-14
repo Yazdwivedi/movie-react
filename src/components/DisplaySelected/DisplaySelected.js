@@ -1,15 +1,27 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import "./DisplaySelected.css";
+import { withRouter } from "react-router-dom";
 
 const displaySelected = ( props ) => {
     const display = props.selectedItem ?
                     <div>
-                        <p>props.selectedItem.name</p>
-                        <p>props.selectedItem.info</p>
+                        <div className = "MovieDetails">
+                            <h3>{props.selectedItem.name}</h3>
+                            <hr/>
+                            <p>{props.selectedItem.info}</p>
+                            <Button 
+                                variant="primary" 
+                                onClick = { () =>  props.history.push(props.match.url+"/book") }>
+                                Book Tickets Now
+                            </Button>
+                        </div>
                     </div> 
                     : <h1>Loading...</h1>       
 
+
     return (
-        { display }
+        display
     )
 }
-export default displaySelected;
+export default withRouter(displaySelected);

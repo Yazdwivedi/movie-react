@@ -6,9 +6,6 @@ import ItemList from "../../components/ItemList/ItemList";
 
 
 class MainPage extends React.Component {
-    constructor (props) {
-        super (props);
-    }
 
     handleDisplay = ( id ) => {
         this.props.history.push("/display/" + id);

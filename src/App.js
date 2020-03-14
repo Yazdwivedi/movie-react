@@ -7,13 +7,13 @@ class App extends React.Component {
 
   state = {
     items : [
-        { id:"1", name : "Movie1", info : "Working", type:"movies" },
-        { id:"2", name : "Sports1", info : "Yes it is great", type:"sports" },
-        { id:"3", name : "Sports2", info : "Working", type:"sports" },
-        { id:"4", name : "Sports3", info : "Working",type:"sports" },
-        { id:"5", name : "Event1", info : "Working", type:"event" },
-        { id:"6", name : "Movie2", info : "Working", type:"movies" },
-        { id:"7", name : "Event2", info : "Working", type:"events" },   
+        { id:"1", name : "Movie1", info : "Working", type:"movies", seats :10 },
+        { id:"2", name : "Sports1", info : "Yes it is great", type:"sports", seats :10 },
+        { id:"3", name : "Sports2", info : "Working", type:"sports", seats :10 },
+        { id:"4", name : "Sports3", info : "Working",type:"sports", seats :10 },
+        { id:"5", name : "Event1", info : "Working", type:"event", seats :10 },
+        { id:"6", name : "Movie2", info : "Working", type:"movies", seats :10 },
+        { id:"7", name : "Event2", info : "Working", type:"events", seats :10 },   
     ],
     sideItems : [
         "First",
@@ -23,9 +23,9 @@ class App extends React.Component {
 }
 
   getItemById = ( id ) => {
-    const item = this.state.items.find( item => item.id===id )
+    const selectedItem = this.state.items.find( item => item.id === id );
     this.setState ( {
-      selectedItem : item
+      selectedItem : selectedItem
     } )
   }
 
@@ -44,7 +44,8 @@ class App extends React.Component {
                                                             {...props}  
                                                             findItem = { (id) => this.getItemById(id) }
                                                             selectedItem = { this.state.selectedItem }
-                                                            /> 
+                                                            >
+                                                            </DisplayPage>   
                                                 } />
         </Router>
       </div>  
